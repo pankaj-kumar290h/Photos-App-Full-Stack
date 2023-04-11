@@ -1,0 +1,46 @@
+.user_section {
+  position: absolute;
+  right: 80px;
+  top: 60px;
+  cursor: pointer;
+  z-index: 3;
+}
+.profile_image_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  width: 100px;
+  height: 100px;
+  /* background-color: gray; */
+  border: 3px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  color: white;
+}
+.profile_image_section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position: center;
+}
+ul {
+  list-style: none;
+}
+
+.user_section_list {
+  margin-top: 10px;
+  /* padding: 1rem 1rem; */
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.user_section_list p {
+  padding: 0.5rem 1rem;
+}
+
+.user_section_list p:hover {
+  background-color: purple;
+}

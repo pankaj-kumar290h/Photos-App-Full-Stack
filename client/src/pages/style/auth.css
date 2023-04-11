@@ -1,0 +1,46 @@
+#auth_page {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: black;
+  background-image: url("https://images.unsplash.com/photo-1473773508845-188df298d2d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80");
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.Auth_section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: aqua; */
+}
+.Auth_section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Auth_section form {
+  padding: 2rem 1rem;
+  /* background-color: aqua; */
+}
+
+.Auth_section form input {
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.653);
+}
+
+.Auth_section button {
+  font-size: 2rem;
+  background-color: rgba(0, 128, 0, 0.628);
+}
+
+.Auth_section p {
+  font-size: 2rem;
+  color: white;
+}
