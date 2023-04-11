@@ -8,7 +8,7 @@ const path = require("path");
 const app = express();
 
 //middelware
-app.use(express.static("./build"));
+app.use(express.static("./client/build"));
 
 app.use(express.json());
 app.use(fileUpload({ useTempFiles: true }));
