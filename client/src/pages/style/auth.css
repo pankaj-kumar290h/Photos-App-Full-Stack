@@ -15,6 +15,12 @@
   transform: translate(-50%, -50%);
   /* background-color: aqua; */
 }
+@media (max-width: 700px) {
+  .Auth_section {
+    font-size: 50%!;
+    width: 70%;
+  }
+}
 .Auth_section form {
   display: flex;
   flex-direction: column;

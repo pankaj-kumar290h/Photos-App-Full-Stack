@@ -7,7 +7,11 @@ import { AiOutlineUserAdd } from "react-icons/ai";
 const User = () => {
   const navigator = useNavigate();
   const [show, setShow] = useState(false);
+  if (!window.localStorage.getItem("user")) {
+    window.localStorage.clear();
+  }
   const user = JSON.parse(localStorage.getItem("user"));
+
   const profileImage = user?.profileImage;
   const signOut = () => {
     if (window.localStorage) {
