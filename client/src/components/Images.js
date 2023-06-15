@@ -4,6 +4,7 @@ import ImageCard from "./ImageCard";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 function Images({ props }) {
   const [data, setData] = useState([]);
+  console.log(data)
 
   const random = async () => {
     const data = await fetch(`${random_photo}`).then((value) => value.json());

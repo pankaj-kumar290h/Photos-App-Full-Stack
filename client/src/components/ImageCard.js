@@ -3,17 +3,37 @@ import "./ImageCard.css";
 import { AiOutlineCloudDownload, AiOutlineCloseCircle } from "react-icons/ai";
 import { BsBookmarkHeart } from "react-icons/bs";
 import { bookmark } from "../helper/handleBookmarkRequest";
+import { toast } from "react-toastify"
+
 
 function ImageCard({ obj, showBookmark }) {
+
   const [show, setShow] = useState(false);
   const model = () => {
     setShow(!show);
   };
 
+
   const handleBookmark = async (event) => {
     event.stopPropagation();
 
-    let res = await bookmark(obj.urls.raw);
+
+    const user = await JSON.parse(localStorage.getItem("user"));
+    if (!user) {
+      toast.error("Plz login", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      })
+      return;
+    }
+    await bookmark(obj.urls.raw);
+
   };
   return (
     <>
@@ -27,7 +47,13 @@ function ImageCard({ obj, showBookmark }) {
       </div>
       <div onClick={model} className="card_body">
         <div className="image">
-          <img src={obj.urls ? obj?.urls?.regular : obj} alt="j" />
+          {obj.user && (<div id="photo_user">
+            <img src={obj.user.profile_image.large} alt="" />
+            <p>{obj.user.name}</p>
+
+          </div>
+          )}
+          <img id="card_image_small" src={obj.urls ? obj?.urls?.small : obj} alt="j" />
           <a
             onClick={(e) => {
               e.stopPropagation();
@@ -43,7 +69,7 @@ function ImageCard({ obj, showBookmark }) {
 
           {showBookmark && (
             <p onClick={handleBookmark} className="bookmark_button">
-              <BsBookmarkHeart />
+              <BsBookmarkHeart className="bookmark_icon" />
             </p>
           )}
         </div>
